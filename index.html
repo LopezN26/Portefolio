@@ -23,8 +23,10 @@
     <link rel="stylesheet" href="css/animate.css">
     <!-- Parallax -->
     <link rel="stylesheet" href="css/rellax.css">
+
     <!--Mon css-->
     <link rel="stylesheet" href="css/main.css">
+
 
 
 </head>
@@ -38,7 +40,7 @@
                 <nav>
                     <ul id="menu" >
                         <li><a class="nav-link" href="#accueil">Home</a></li>
-                        <li><a class="nav-link" href="#aboutMe">About Me</a></li>
+                        <li data-scroll-nav="1"><a class="nav-link" href="#aboutMe">About Me</a></li>
                         <li><a class="nav-link" href="#slogan">Slogan</a></li>
                         <li><a class="nav-link" href="#team">Team</a></li>
                         <li><a class="nav-link" href="#slider">Slider</a></li>
@@ -165,7 +167,7 @@
     <!-- ----fin-Team---- -->
 
     <!-- ----Slider---- -->
-    <section id="slider">
+    <section id="slider" data-scroll-index="1">
         <div class="glide">
             <div data-glide-el="track" class="glide__track">
                 <ul class="glide__slides">
@@ -262,6 +264,8 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!-- Parallax -->
 <script src="vendor/rellax.min.js"></script>
+<!-- Scroll-IT -->
+<script src="vendor/scrollIt.min.js"></script>
 <!--Mon script-->
 <script src="js/script.js"></script>
 </html>
