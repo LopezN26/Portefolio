@@ -1,0 +1,449 @@
+<?php
+include 'header.php';
+?>
+    <section class="contenutest">
+        <canvas id="zone" width="600" height="600" style="border: 1px red solid; background-color : black;">
+            Désolé, votre navigateur (ou sa version) ne prend pas en charge les "canvas".
+        </canvas>
+    </section>
+<script>
+
+        var canvas = document.getElementById('zone');
+        var ctx = canvas.getContext('2d');
+
+        var largeur=hauteur=20;
+        var x= 440;//Math.trunc(Math.random()*canvas.height/hauteur)*hauteur;
+        var y= 200;//Math.trunc(Math.random()*canvas.width/largeur)*largeur;
+        var depX=depY=0;
+
+        var trace =[];
+        var tailleTrace=5; //5
+        var sautTrace=1;
+        var tailleMaxTrace=500;
+        var hist, compteBoucle = 0;
+        var maxTaille=5;
+        var sautBoucle = 10;
+
+        var pommeX = Math.trunc(Math.random()*canvas.width/largeur)*largeur;
+        var pommeY = Math.trunc(Math.random()*canvas.height/hauteur)*hauteur;
+        var pommeRadius = 8;
+
+        var score=0;
+
+        var vies=3;
+
+        var time=150; //150
+        var nbPauses=300;
+        var pause=0;
+
+        var hist, hist2=0;
+
+        var droite=39;
+        var gauche=37;
+        var haut=38;
+        var bas=40;
+
+        function dessinTete()
+        {
+            //console.log('dessinTete', JSON.stringify([x, y])) ;
+            ctx.beginPath(); //dessin tête
+            ctx.fillStyle="#e74c3c";
+            ctx.fillRect(x,y,largeur-2, hauteur-2);
+            ctx.closePath();
+        }
+
+        function dessinTrace()
+        {
+            //console.log('dessinTrace', JSON.stringify(trace)) ;
+
+            if (depX!=0 || depY!=0)
+            {
+                trace.push({x:x,y:y});
+            }
+
+            while(trace.length>tailleTrace+1)
+            {
+                trace.shift();
+            }
+            for(var i=0;i<trace.length-1;i++)  //dessin trace
+            {
+                ctx.beginPath();
+                ctx.fillStyle="#f1c40f";
+                ctx.fillRect(trace[i].x,trace[i].y, largeur-2, hauteur-2);
+                ctx.closePath();
+            }
+        }
+        function dessinPomme()
+        {
+            ctx.beginPath(); //dessin pomme
+            ctx.arc(pommeX+pommeRadius, pommeY+pommeRadius,pommeRadius, 0, Math.PI * 2);
+            ctx.fillStyle="#e74c3c";
+            ctx.fill();
+            ctx.closePath();
+            ctx.beginPath(); //dessin reflet pomme
+            ctx.arc(pommeX+pommeRadius+1, pommeY+pommeRadius+1,pommeRadius/2, 0, Math.PI * 2);
+            ctx.fillStyle="#Fe8476";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+
+
+        function dessinScore()
+        {
+            ctx.beginPath(); //dessin score
+            ctx.font = '16px Arial';
+            ctx.fillStyle = '#fff';
+            ctx.fillText('Score: ' + score, 5, 20);
+            ctx.closePath();
+        }
+
+        function dessinVies()
+        {
+            ctx.beginPath();
+            ctx.font = '16px Arial'; // dessin nb vie
+            ctx.fillStyle = '#fff';
+            ctx.fillText('Vies restante: ' + vies, canvas.width - 130, 20);
+            ctx.closePath();
+        }
+
+        function dessinVitesse()
+        {
+            ctx.beginPath(); //dessin score
+            ctx.font = '16px Arial';
+            ctx.fillStyle = '#fff';
+            ctx.fillText('Vitesse : ' + (151-time) +'/101', canvas.width-120, canvas.height-10);
+            ctx.closePath();
+        }
+
+        function dessinPauses()
+        {
+            ctx.beginPath(); //dessin score
+            ctx.font = '16px Arial';
+            ctx.fillStyle = '#fff';
+            ctx.fillText('Pauses restantes : ' + nbPauses, 5, canvas.height-10);
+            ctx.closePath();
+        }
+
+        function gestionPause()
+        {
+            if (nbPauses>0)
+            {
+                nbPauses--;
+                depY=0;
+                depX=0;
+                pause==1;
+            }
+
+        }
+
+        function gameOver()
+        {
+            if (vies==0)
+            {
+                alert (`T'as perdu, tu as mangé ${score} pomme(s), et atteint la taille maximale de ${maxTaille} cases`);
+                score =0;
+                vies=3;
+                time = 150;
+                interval = setInterval (game,time);
+            }
+        }
+
+
+        function collisionBords()
+        {
+
+            if (x<0)
+            {
+                x=canvas.width-20;
+
+            }
+            if (x>=canvas.width)
+            {
+                x=0;
+
+            }
+            if (y<0)
+            {
+                y=canvas.height-20;
+
+            }
+            if (y>=canvas.height)
+            {
+                y=0;
+
+            }
+        }
+
+        function levelDesign()
+        {
+
+            dessinObstacles();
+            collisionObstacles();
+
+        }
+
+        function dessinObstacles()
+        {
+            ctx.beginPath(); //dessin mur
+            ctx.fillStyle="#e74c3c";
+            ctx.fillRect(300,60,19,479);
+            ctx.closePath();
+        }
+
+
+
+        function verifSpawnPomme()
+        {
+            for (i=0;i<trace.length-1;i++) //pour vérifier que la pomme n'apparaisse pas sur le serpon
+            {
+                while ((pommeX==trace[i].x && pommeY==trace[i].y) || (pommeX==300 && (pommeY>=60 && pommeY<=520)))
+                {
+                    pommeX=Math.trunc(Math.random()*canvas.width/largeur)*largeur;
+                    pommeY=Math.trunc(Math.random()*canvas.height/hauteur)*hauteur;
+                }
+            }
+        }
+
+        function collisionObstacles()
+        {
+            if (x===300 && (y>=60 && y<=520))
+            {
+                vies--;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                trace =[];
+                pommeX=Math.trunc(Math.random()*canvas.width/largeur)*largeur; //redef position pomme
+                pommeY=Math.trunc(Math.random()*canvas.height/hauteur)*hauteur;
+                depX=depY=0; //arret serpent
+                x= Math.trunc(Math.random()*canvas.height/hauteur)*hauteur;
+                y= Math.trunc(Math.random()*canvas.width/largeur)*largeur;
+                tailleTrace=5;
+                hist=0;  // pour pouvoir repartir dans toutes les directions
+                alert("mangeage de mur");
+                rehausseTime();
+            }
+        }
+
+    window.onload=function()
+    {
+
+        document.addEventListener ("keydown",keyboard);
+
+        function keyboard(evt)
+        {
+            switch (evt.keyCode)
+            {
+                case gauche: // fleche de gauche
+                    if(hist==droite){break;} //si hist = droite, empeche demi tour en 1 temps
+
+                    if (hist2==droite && hist==bas) //pour éviter l'automangeage en 2 temps, fait un bas gauche rapide
+                    {
+                        depY=1;
+                        depX=0;
+                        game();
+                    }
+                    if (hist2==droite && hist==haut) //pour éviter l'automangeage en 2 temps, fait un haut gauche rapide
+                    {
+                        depY=-1;
+                        depX=0;
+                        game();
+                    }
+                    hist2=hist;
+                    hist=evt.keyCode;
+                    depY=0;
+                    depX=-1;
+                    break;
+
+                case haut: //fleche du haut
+                    if(hist==bas){break;} //si hist = bas, empeche demi tour en 1 temps
+                    if (hist2==bas && hist==droite) //pour éviter l'automangeage en 2 temps, fait un droite haut rapide
+                    {
+                        depY=0;
+                        depX=1;
+                        game();
+                    }
+                    if (hist2==bas && hist==gauche) //pour éviter l'automangeage en 2 temps, fait un gauche haut rapide
+                    {
+                        depY=0;
+                        depX=-1;
+                        game();
+                    }
+                    hist2=hist;
+                    hist=evt.keyCode;
+                    depY=-1;
+                    depX=0;
+                    break;
+
+                case droite: //fleche de droite
+                    if(hist==gauche){break;} //si hist = gauche, empeche demi tour en 1 temps
+                    if (hist2==gauche && hist==haut) //pour éviter l'automangeage en 2 temps, fait un haut droite rapide
+                    {
+                        depY=-1;
+                        depX=0;
+                        game();
+                    }
+                    if (hist2==gauche && hist==bas) //pour éviter l'automangeage en 2 temps, fait un bas droite rapide
+                    {
+                        depY=1;
+                        depX=0;
+                        game();
+                    }
+                    hist2=hist;
+                    hist=evt.keyCode;
+                    depY=0;
+                    depX=1;
+                    break;
+
+                case bas: // fleche du bas
+                    if(hist==haut){break;} //si hist = haut, empeche demi tour en 1 temps
+                    if (hist2==haut && hist==droite) //pour éviter l'automangeage en 2 temps, fait un droite bas rapide
+                    {
+                        depY=0;
+                        depX=1;
+                        game();
+                    }
+                    if (hist2==haut && hist==gauche) //pour éviter l'automangeage en 2 temps, fait un gauche bas rapide
+                    {
+                        depY=0;
+                        depX=-1;
+                        game();
+                    }
+                    hist2=hist;
+                    hist=evt.keyCode;
+                    depY=1;
+                    depX=0;
+                    break;
+
+                case 32: //espace
+                    gestionPause();
+                    break;
+            }
+        }
+
+        function game ()
+        {
+            if(!depX && !depY && pause==1)
+                return ;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            x+=depX*largeur;
+            y+=depY*hauteur;
+
+            collisionBords();
+
+            dessinTrace();
+
+            dessinTete();
+
+            dessinScore();
+
+            dessinVies();
+
+            dessinVitesse();
+
+            dessinPauses();
+
+            dessinPomme();
+
+            detectCollisionPomme();
+
+            autoCollision();
+
+            gameOver();
+
+            levelDesign();
+
+            hist2=0;
+            //console.log(trace);
+        }
+
+
+
+        function accelJeu()
+        {
+            if (time>50)
+            {
+                time --;
+            }
+            clearTimeout(interval);
+            interval = setInterval (game,time);
+        }
+
+        function rehausseTime()
+        {
+            if (time >=130)
+            {
+                time = 150;
+            }
+            else
+            {
+                time+=20;
+            }
+            clearTimeout(interval);
+            interval = setInterval (game,time);
+        }
+
+        function autoCollision()
+        {
+
+            for (i=0;i<trace.length-1;i++)
+            {
+                if (trace[i].x==trace[trace.length-1].x && trace[i].y==trace[trace.length-1].y)
+                {
+                    alert("automangeage");
+                    vies--;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    trace =[];
+                    pommeX=Math.trunc(Math.random()*canvas.width/largeur)*largeur; //redef position pomme
+                    pommeY=Math.trunc(Math.random()*canvas.height/hauteur)*hauteur;
+                    depX=depY=0; //arret serpent
+                    x= Math.trunc(Math.random()*canvas.height/hauteur)*hauteur;
+                    y= Math.trunc(Math.random()*canvas.width/largeur)*largeur;
+                    tailleTrace=5;
+                    hist=0; // pour pouvoir repartur dans toutes les directions
+                    rehausseTime();
+                }
+            }
+        }
+
+
+
+        function detectCollisionPomme()
+        {
+            if (x==pommeX && y==pommeY) //détection collision
+            {
+
+                score ++;
+                pommeX=Math.trunc(Math.random()*canvas.width/largeur)*largeur;
+                pommeY=Math.trunc(Math.random()*canvas.height/hauteur)*hauteur;
+                tailleTrace+=sautTrace; //arandissement
+                verifSpawnPomme();
+                if (maxTaille<tailleTrace)
+                {
+                    maxTaille=tailleTrace;
+                }
+                accelJeu();
+            }
+            console.log(pommeX);
+        }
+
+        function gameOver()
+        {
+            if (vies==0)
+            {
+                alert (`T'as perdu, tu as mangé ${score} pomme(s), et atteint la taille maximale de ${maxTaille} cases`);
+                score =0;
+                vies=3;
+                time = 150;
+                clearTimeout(interval);
+                interval = setInterval (game,time);
+            }
+        }
+
+        interval = setInterval (game,time);
+        console.log("jeej");
+    }
+    </script>
+
+<?php
+include 'footer.php';
+?>

@@ -1,0 +1,366 @@
+@font-face {
+    font-family: "WildFlowerBold";
+    src: url("../font/WildFlowerBold.ttf")
+}
+body
+{
+    position: relative;
+}
+
+#accueil
+{
+    background-image: url("../images/fdb.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#accueil header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    flex-basis: 10%;
+    color: rgba(81, 127, 65, 1);
+    position: fixed;
+    z-index: 2;
+}
+.backgroundWhite
+{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.backgroundBlue
+{
+    background-color: rgba(123, 212, 255, 0.3);
+}
+#accueil header>h1{
+    font-family: WildFlowerBold;
+    padding-left:1em;
+    font-size: 2em;
+}
+#accueil a
+{
+    font-size: 1.25em;
+    color: rgba(81, 127, 65, 1);
+}
+.active
+{
+    text-decoration: underline;
+}
+#accueil ul
+{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+}
+#accueil li
+{
+    margin: 0 0.4em 0 0.4em;
+}
+#accueil nav>i
+{
+    display: none;
+}
+#accueil main
+{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#accueil main>div
+{
+    background-color: rgba(81, 127, 65, 0.41);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 4px white dotted;
+    width : 60vw;
+    height: 20vh;
+}
+#accueil h2
+{
+    font-family: 'Dancing Script', cursive;
+    font-size: 5em;
+    padding: 0;
+}
+
+#aboutUs
+{
+    text-align: center;
+}
+#aboutUs h3
+{
+    color: rgba(81, 127, 65,1);
+    font-size: 5em;
+    font-family: 'Courgette', cursive;
+    margin: 0.25em;
+}
+#aboutUs i
+{
+    font-size: 2.5em;
+    margin: 0.75em;
+    color: rgba(81, 127, 65,0.5);
+}
+#aboutUs p
+{
+    text-align: justify;
+    margin-bottom: 1em;
+}
+
+
+#slogan
+{
+    background-image: url("../images/bg3.jpg");
+    background-attachment: fixed;
+    background-position: top;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#slogan div
+{
+    background-color: rgba(81, 127, 65, 0.41);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 4px white dotted;
+    margin: 10%;
+    width : 60vw;
+    height: 20vh;
+    font-family: 'Dancing Script', cursive;
+}
+#slogan p
+{
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+#team
+{
+    text-align: center;
+}
+#team .row
+{
+    margin: 0 1em 0 1em;
+}
+#team h3
+{
+    color: rgba(81, 127, 65,1);
+    font-size: 5em;
+    font-family: 'Courgette', cursive;
+    margin: 0.25em;
+}
+#team figure
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#team img
+{
+    width: 15vw;
+    height: 15vw;
+    border-radius:15vw;
+    border: solid 10px rgba(81, 127, 65, 1);
+}
+#team img:hover+div
+{
+    opacity: 0.9;
+}
+#team img+div
+{
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: absolute;
+    background-color: rgba(81, 127, 65,0.8);
+    width: 12vw;
+    height: 12vw;
+    border-radius: 12vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#team img+div:hover
+{
+    opacity: 0.9;
+}
+#team img+div>i
+{
+    color: white;
+    font-size:1.2em;
+}
+#team h5
+{
+    font-family: 'Courgette', cursive;
+    font-size: 1.4em;
+}
+#team div>span
+{
+    font-style: italic;
+    font-size: 1.1em;
+
+}
+#team p
+{
+    margin-top: 1em;
+    text-align:justify;
+}
+
+
+#slider
+{
+    padding: 2em;
+    background-image: url("../images/bg2.jpg");
+    background-attachment: fixed;
+}
+#slider img
+{
+    border-radius: 45px;
+    width: 15vw;
+    height: 15vw;
+}
+.glide__slide
+{
+    text-align: center;
+}
+.glide__arrow
+{
+    border : 3px solid white;
+    font-weight: 800;
+}
+
+
+#quams
+{
+    text-align: center;
+}
+#quams h3
+{
+    color: rgba(81, 127, 65,1);
+    font-size: 5em;
+    font-family: 'Courgette', cursive;
+    margin: 0.25em;
+}
+#quams img
+{
+    width: 25vw;
+    height: 25vw;
+    margin: 0.5em;
+    border-radius: 3em;
+}
+#quams img:hover
+{
+    opacity: 0.8;
+}
+
+#contact
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(81, 127, 65,0.5);
+    height: 30vh;
+}
+#contact div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 4px white dotted;
+    width : 20vw;
+    height: 10vh;
+    font-family: 'Courgette', cursive;
+    font-size: 3em;
+    animation: bounce 50 1s 1s;
+}
+
+
+@media (max-width:890px)
+{
+    #accueil li
+    {
+        display: none;
+        flex-wrap: nowrap;
+    }
+    #accueil nav
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-right: 1em;
+    }
+    #accueil nav>i
+    {
+        display: inherit;
+        margin: 0;
+    }
+
+    #slogan p
+    {
+        font-size: 2rem;
+    }
+
+
+    #team img
+    {
+        width: 80vw;
+        height: 80vw;
+        border-radius: 80vw;
+    }
+    #team img+div
+    {
+        width: 70vw;
+        height: 70vw;
+        border-radius: 70vw;
+    }
+    #team img+div>i
+    {
+        color: white;
+        font-size:5em;
+    }
+    #team h5
+    {
+        font-size: 3rem;
+    }
+    #team div>span
+    {
+        font-size: 2rem;
+    }
+
+
+    #contact div
+    {
+        font-size: 2rem;
+    }
+
+
+    #slider img
+    {
+        border-radius: 10vw;
+        width: 60vw;
+        height: 60vw;
+    }
+
+    #quams img
+    {
+        width: 75vw;
+        height: 75vw;
+    }
+}
