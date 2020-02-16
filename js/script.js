@@ -27,7 +27,7 @@ var header = $("#header");
 //récupération des positions des sections
 
 var accueil = $("#accueil")[0].offsetTop;
-var aboutUs = $("#aboutUs")[0].offsetTop;
+var aboutMe = $("#aboutMe")[0].offsetTop;
 var slogan = $("#slogan")[0].offsetTop;
 var team = $("#team")[0].offsetTop;
 var slider =$("#slider")[0].offsetTop;
@@ -36,11 +36,11 @@ var quams =$("#quams")[0].offsetTop;
 
 //conditions pour affichage du Background ou non dans le header
 $( window ).scroll(function() {
-    if ($(window).scrollTop() < aboutUs) {
+    if ($(window).scrollTop() < aboutMe) {
         header.removeClass("backgroundWhite");
         header.removeClass("backgroundBlue");
     }
-    else if ($(window).scrollTop() > aboutUs && $(window).scrollTop() < slogan)
+    else if ($(window).scrollTop() > aboutMe && $(window).scrollTop() < slogan)
     {
         header.removeClass("backgroundWhite");
         header.addClass("backgroundBlue");

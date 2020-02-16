@@ -1,0 +1,501 @@
+feader
+{
+    height : 100vh;
+    background-image: url("../images/desk.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+header>nav
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-basis:7%;
+    width: 100%;
+    position: fixed;
+    z-index:2;
+    font-size: 1.4em;
+    font-family: Poppins;
+
+}
+.background
+{
+    background-color: rgba(0, 0, 0, 0.50);
+}
+ul
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 100%;
+    padding: 0;
+    margin :0.3em;
+}
+ul>i
+{
+    padding: 10px;
+    background-color: #292929;
+    border-radius: 20px;
+    align-self: flex-end;
+}
+ul i[class="fas fa-list"]
+{
+    position: absolute;
+}
+li
+{
+    list-style: none;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding: 0.1em;
+}
+li:hover
+{
+    text-decoration: underline;
+}
+.invisible
+{
+    visibility: hidden;
+}
+header>section
+{
+    flex-basis: 93%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7%;
+}
+
+header h2
+{
+    font-size: 5em;
+    margin-bottom: 0;
+    font-family: Montserrat;
+}
+
+#messageAccueil
+{
+    display: flex;
+    flex-direction: column;
+
+}
+header>section span
+{
+    font-size: 4em;
+    font-family: Poppins;
+}
+#typed
+{
+    color: #b599ff;
+}
+#logoHeader
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+figure>i
+{
+    background-color: #292929;
+    padding: 10px;
+    width: 16px;
+    height: 16px;
+    /*background-origin: padding-box;*/
+    text-align: center;
+    border-radius: 20px;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+#aboutMe
+{
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#aboutMe h2
+{
+    font-size: 3.5em;
+    font-family: Montserrat;
+    margin-bottom: 0;
+}
+
+#aboutMe h3
+{
+    font-size: 1.5em;
+    font-family: Poppins;
+}
+#aboutMe>section
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#aboutMe>div
+{
+    display: flex;
+    flex-direction: column;
+}
+#contenuAboutMe>div
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins;
+}
+#contenuAboutMe>div>section
+{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#contenuAboutMe>div>p
+{
+    padding: 1em;
+}
+
+.progressBar
+{
+    position: relative;
+    width: 80%;
+    border-radius: 5px;
+    background: #F7F7F7;
+    box-shadow: inset 0px 2px 7px RGBA(0,0,0,0.15);
+    margin-bottom: 30px;
+}
+.progressBar p
+{
+    padding: 2px;
+}
+.progressBarFill
+{
+    position: absolute;
+    color: #dcdcdc;
+    background-color: #1c1c1c;
+    box-shadow: inset 0px 2px 7px rgb(233, 228, 222);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#progressBarFill1
+{
+    width: 80%;
+}
+#progressBarFill2
+{
+    width: 45%;
+}
+.progressBarFill>p
+{
+    margin: 0;
+    padding-left: 5px;
+}
+.progressBar>p{
+    margin: 0;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: right;
+}
+
+#contenuAboutMe button
+{
+    margin-bottom: 5px;
+}
+#downloadButton
+{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+
+#contactMeButton
+{
+    border: black solid 1px;
+    color: purple;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#certification
+{
+    background-color: #ececf4;
+}
+
+#certification .slide
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #eaeaee;
+}
+#certification .slide p
+{
+    text-align: center;
+}
+#certification h2
+{
+    font-size: 2.5em;
+    font-family: Montserrat;
+}
+#certification img
+{
+    width: 10em;
+    height: 10em;
+    border-radius: 5em;
+}
+#certification p
+{
+    font-family: Poppins;
+    font-size: 1.5em;
+}
+
+#portfolio
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#portfolio h2
+{
+    font-size: 3em;
+    font-family: Montserrat;
+}
+#portfolio>section
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#portfolio div
+{
+    position : relative;
+}
+#portfolio img
+{
+    width: 75vw;
+    height: 60vw;
+    border-radius: 15px;
+    margin-top: 2vw ;
+    margin-bottom: 2vw;
+}
+
+#portfolio img:hover+.whiteSquare
+{
+    opacity:0.9;
+}
+
+#portfolio>section>div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.whiteSquare
+{
+    box-sizing: border-box;
+    background-color: ghostwhite;
+    border-radius: 15px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.7s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 85%;
+    margin: 10px;
+    border: black 2px solid;
+}
+.whiteSquare span
+{
+    text-align: center;
+    font-family: Poppins;
+    font-size: 2em;
+}
+.whiteSquare i
+{
+    font-size: 2em;
+}
+.whiteSquare:hover
+{
+    opacity:0.9;
+}
+
+#contact
+{
+    background-color: #fff7db;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#contact h2
+{
+    font-family: Montserrat;
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+#contact h4
+{
+    font-family: Montserrat;
+    font-size: 1.5em;
+}
+#contact>form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 40vh;
+}
+
+#contact input
+{
+    width: 50vw;
+    border: none;
+    border-radius: 5px;
+    margin : 2vw;
+}
+
+#contact textarea
+{
+    width: 50vw;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    height : 4.5em;
+}
+#contact input
+{
+    font-size: 1.5em;
+}
+
+#contact input[type="submit"]
+{
+    background-color: black;
+    color: white;
+    width: 8em;
+}
+
+
+
+@media (min-width:800px) {
+
+
+    header>nav
+    {
+        justify-content: flex-end;
+        background-color: rgba(0, 0, 0, 0.50)
+    }
+    ul
+    {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        color: white;
+        margin :1em;
+    }
+    li
+    {
+        list-style: none;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+    li[data-scroll-nav]
+    {
+        visibility: visible;
+    }
+    ul i
+    {
+        visibility: hidden;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    #logoHeader>i
+    {
+        background-color: #292929;
+        padding: 10px;
+        width: 16px;
+        height: 16px;
+        /*background-origin: padding-box;*/
+        text-align: center;
+        border-radius: 20px;
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+
+
+    #aboutMe>section
+    {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    #contenuAboutMe>div>section
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+
+    #portfolio>section
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 99vw;
+        margin: 2.5vw;
+    }
+    #portfolio img
+    {
+        width: 25vw;
+        height: 20vw;
+        flex-wrap: wrap;
+        border-radius: 15px;
+    }
+    .whiteSquare
+    {
+        width: 90%;
+        height: 75%;
+    }
+
+
+    #contact textarea
+    {
+        height: 6em;
+    }
+
+}    
