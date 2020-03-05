@@ -124,6 +124,7 @@ body
     background: #F7F7F7;
     box-shadow: inset 0px 2px 7px RGBA(0,0,0,0.15);
     margin-bottom: 30px;
+    margin-top: 30px;
     height: 2em;
 }
 .progressBar p
@@ -138,17 +139,25 @@ body
     background-color: #1c1c1c;
     box-shadow: inset 0px 2px 7px rgb(233, 228, 222);
     border-radius: 5px;
+    height: 2em;
 }
-#progressBarFill1
+#progressBarFillHtmlCss
 {
     width: 80%;
-    height: 2em;
 }
-#progressBarFill2
+#progressBarFillJs
 {
-    width: 45%;
-    height: 2em;
+    width: 70%;
 }
+#progressBarFillPhp
+{
+    width: 75%;
+}
+#progressBarFillSql
+{
+    width: 60%;
+}
+
 .progressBarFill>p
 {
     margin: 0;
@@ -185,130 +194,27 @@ body
     height: 20vh;
     font-family: 'Dancing Script', cursive;
 }
-#slogan p
-{
-    text-align: center;
-    font-size: 3rem;
-}
 
 
-#team
+#projects
 {
     text-align: center;
 }
-#team .row
-{
-    margin: 0 1em 0 1em;
-}
-#team h3
+#projects h3
 {
     color: rgba(23, 176, 171,1);
     font-size: 5em;
     font-family: 'Courgette', cursive;
     margin: 0.25em;
 }
-#team figure
-{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-#team img
-{
-    width: 15vw;
-    height: 15vw;
-    border-radius:15vw;
-    border: solid 10px rgba(23, 176, 171, 1);
-}
-#team img:hover+div
-{
-    opacity: 0.9;
-}
-#team img+div
-{
-    opacity: 0;
-    transition: opacity 1s ease;
-    position: absolute;
-    background-color: rgba(23, 176, 171,0.8);
-    width: 12vw;
-    height: 12vw;
-    border-radius: 12vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-#team img+div:hover
-{
-    opacity: 0.9;
-}
-#team img+div>i
-{
-    color: white;
-    font-size:1.2em;
-}
-#team h5
-{
-    font-family: 'Courgette', cursive;
-    font-size: 1.4em;
-}
-#team div>span
-{
-    font-style: italic;
-    font-size: 1.1em;
-
-}
-#team p
-{
-    margin-top: 1em;
-    text-align:justify;
-}
-
-
-#slider
-{
-    padding: 2em;
-    background-image: url("../images/bg2.jpg");
-    background-attachment: fixed;
-}
-#slider img
-{
-    border-radius: 45px;
-    width: 15vw;
-    height: 15vw;
-}
-.glide__slide
-{
-    text-align: center;
-}
-.glide__arrow
-{
-    border : 3px solid white;
-    font-weight: 800;
-}
-
-
-#quams
-{
-    text-align: center;
-}
-#quams h3
-{
-    color: rgba(23, 176, 171,1);
-    font-size: 5em;
-    font-family: 'Courgette', cursive;
-    margin: 0.25em;
-}
-#quams img
+#projects img
 {
     width: 25vw;
     height: 25vw;
     margin: 0.5em;
     border-radius: 3em;
 }
-#quams img:hover
+#projects img:hover
 {
     opacity: 0.8;
 }
@@ -334,7 +240,19 @@ body
     font-size: 3em;
     animation: bounce 50 1s 1s;
 }
+#google
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+#projects img[src="images/google.png"]
+{
+    height: inherit;
+    border-radius: 0px;
+}
 
 @media (max-width:890px)
 {
@@ -402,9 +320,18 @@ body
         height: 60vw;
     }
 
-    #quams img
+    #projects img
     {
         width: 75vw;
         height: 75vw;
+    }
+}
+
+@keyframes fill80 {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 80%;
     }
 }

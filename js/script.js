@@ -1,4 +1,4 @@
-new Glide('.glide', {
+/*new Glide('.glide', {
     type: 'slider',
     startAt: 0,
     perView: 3,
@@ -7,7 +7,7 @@ new Glide('.glide', {
         perView: 1
         }
     }
-}).mount(); //création du glider
+}).mount(); //création du glider*/
 
 AOS.init(); //pour faire marcher AOS
 
@@ -28,10 +28,8 @@ var header = $("#header");
 
 var accueil = $("#accueil")[0].offsetTop;
 var aboutMe = $("#aboutMe")[0].offsetTop;
-var slogan = $("#slogan")[0].offsetTop;
-var team = $("#team")[0].offsetTop;
-var slider =$("#slider")[0].offsetTop;
-var quams =$("#quams")[0].offsetTop;
+//var slider =$("#slider")[0].offsetTop;
+var projects =$("#projects")[0].offsetTop;
 
 
 //conditions pour affichage du Background ou non dans le header
@@ -40,27 +38,12 @@ $( window ).scroll(function() {
         header.removeClass("backgroundWhite");
         header.removeClass("backgroundBlue");
     }
-    else if ($(window).scrollTop() > aboutMe && $(window).scrollTop() < slogan)
+    else if ($(window).scrollTop() > aboutMe && $(window).scrollTop() < projects)
     {
         header.removeClass("backgroundWhite");
         header.addClass("backgroundBlue");
     }
-    else if ($(window).scrollTop() > slogan && $(window).scrollTop() < team)
-    {
-        header.addClass("backgroundWhite");
-        header.removeClass("backgroundBlue");
-    }
-    else if ($(window).scrollTop() > team && $(window).scrollTop() < slider)
-    {
-        header.removeClass("backgroundWhite");
-        header.addClass("backgroundBlue");
-    }
-    else if ($(window).scrollTop() > slider && $(window).scrollTop() < quams)
-    {
-        header.addClass("backgroundWhite");
-        header.removeClass("backgroundBlue");
-    }
-    else if ($(window).scrollTop() > quams)
+    else if ($(window).scrollTop() > projects)
     {
         header.removeClass("backgroundWhite");
         header.addClass("backgroundBlue");
@@ -77,3 +60,8 @@ $(function(){
     //     onPageChange: null,    // function(pageIndex) that is called when page is changed
     //     topOffset: 0           // offste (in px) for fixed top navigation
 });
+
+if ($(window).scrollTop() > 100)
+{
+    $("#progressBarFillHtmlCss").addClass("fill80")
+}

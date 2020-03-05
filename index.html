@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Flower</title>
+    <title>Portefolio</title>
     <!-- Normalize -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- Jquery -->
@@ -32,20 +32,17 @@
 </head>
 <body data-spy="scroll" data-target="#menu">
     <!-- ----Accueil---- -->
-    <section id="accueil">
+    <section id="accueil" data-scroll-index="0">
             <header id="header">
                 <h1>
                     @
                 </h1>
                 <nav>
                     <ul id="menu" >
-                        <li><a class="nav-link" href="#accueil">Home</a></li>
+                        <li data-scroll-nav="0"><a class="nav-link" href="#accueil">Home</a></li>
                         <li data-scroll-nav="1"><a class="nav-link" href="#aboutMe">About Me</a></li>
-                        <li><a class="nav-link" href="#slogan">Slogan</a></li>
-                        <li><a class="nav-link" href="#team">Team</a></li>
-                        <li><a class="nav-link" href="#slider">Slider</a></li>
-                        <li><a class="nav-link" href="#quams">Quams</a></li>
-                        <li><a class="nav-link" href="#contact">Contact</a></li>
+                        <li data-scroll-nav="2"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li data-scroll-nav="3"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                     <i class="fas fa-list"></i>
                 </nav>
@@ -60,187 +57,91 @@
     <!-- ----fin-Accueil---- -->
 
     <!-- ----About Me---- -->
-    <section id="aboutMe" class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-sm-12"><h3 data-aos="fade-left">About me</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-12">
-                <i class="fas fa-air-freshener"></i>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <i class="fas fa-atom"></i>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <i class="fas fa-leaf"></i>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <section data-scroll-index="1" id="aboutMe" class="container-fluid">
+        <div class="progressBar">
+            <div class="progressBarFill" data-aos-duration="500" data-aos="fade-right" id="progressBarFillHtmlCss">
+                <p>HTML CSS 80%</p>
             </div>
         </div>
         <div class="progressBar">
-            <div class="progressBarFill" data-aos-duration="500" data-aos-delay="200" data-aos="fade-right" id="progressBarFill1">
-                <p>80%</p>
+            <div class="progressBarFill" data-aos-duration="500" data-aos="fade-right" id="progressBarFillJs">
+                <p>JS 70%</p>
             </div>
         </div>
         <div class="progressBar">
-            <div class="progressBarFill" data-aos-duration="500" data-aos-delay="200" data-aos="fade-right" id="progressBarFill2">
-                <p>45%</p>
+            <div class="progressBarFill" data-aos-duration="500" data-aos="fade-right" id="progressBarFillPhp">
+                <p>Php 75%</p>
+            </div>
+        </div>
+        <div class="progressBar">
+            <div class="progressBarFill" data-aos-duration="500" data-aos-delay="200" data-aos="fade-right" id="progressBarFillSql">
+                <p>SQL 60%</p>
             </div>
         </div>
     </section>
-    <!-- ----fin-About Us---- -->
+    <!-- ----fin-About Me---- -->
 
-    <!-- ----Slogan---- -->
-    <section id="slogan">
-        <div>
-            <p data-aos="fade-right">
-                Preaterea iter est quasdam res quas ex communi
-            </p>
-        </div>
-    </section>
-    <!-- ----fin-Slogan---- -->
-
-    <!-- ----Team---- -->
-    <section id="team" class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-sm-12">
-                <h3 data-aos="fade-left">Team</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-sm-12">
-                <figure>
-                    <img src="images/team/hp1.png" alt="portrait">
-                    <div>
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </figure>
-                <h5>Harry Potter</h5>
-                <span>Griffondor</span>
-                <p> In semper mi a metus aliquam condimentum. Donec a sapien vitae odio auctor gravida ac sit amet magna. Suspendisse bibendum porttitor lacinia</p>
-            </div>
-            <div class="col-lg-3 col-sm-12">
-                <figure>
-                    <img src="images/team/hp2.png" alt="portrait">
-                    <div>
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </figure>
-                <h5>Hermione Granger</h5>
-                <span>Griffondor</span>
-                <p> In semper mi a metus aliquam condimentum. Donec a sapien vitae odio auctor gravida ac sit amet magna. Suspendisse bibendum porttitor lacinia</p>
-            </div>
-            <div class="col-lg-3">
-                <figure>
-                    <img src="images/team/hp3.png" alt="portrait">
-                    <div>
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </figure>
-                <h5>Ron Weasley</h5>
-                <span>Griffondor</span>
-                <p> In semper mi a metus aliquam condimentum. Donec a sapien vitae odio auctor gravida ac sit amet magna. Suspendisse bibendum porttitor lacinia</p>
-            </div>
-            <div class="col-lg-3">
-                <figure>
-                    <img src="images/team/hp4.png" alt="portrait">
-                    <div>
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </figure>
-                <h5>Jenny Weasley</h5>
-                <span>Griffondor</span>
-                <p> In semper mi a metus aliquam condimentum. Donec a sapien vitae odio auctor gravida ac sit amet magna. Suspendisse bibendum porttitor lacinia</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ----fin-Team---- -->
 
     <!-- ----Slider---- -->
-    <section id="slider" data-scroll-index="1">
+    <!--<section id="slider" data-scroll-index="1">
         <div class="glide">
             <div data-glide-el="track" class="glide__track">
                 <ul class="glide__slides">
-                    <li class="glide__slide"><img src="images/fleur/f1.png"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f2.jpg"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f3.jpg"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f4.jpg"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f5.jpg"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f6.jpg"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f7.jpg"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f8.jpg"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f9.jpg"/></li>
-                    <li class="glide__slide"><img src="images/fleur/f10.jpg"/></li>
+                    <li class="glide__slide"><img src="images/img1.JPG"/></li>
+                    <li class="glide__slide"><img src="images/google.png"/></li>
+                    <li class="glide__slide"><img src="images/logostarwars.png"></li>
+                    <li class="glide__slide"><img src="images/blob.png"></li>
+                    <li class="glide__slide"><img src="images/img1.JPG"/></li>
+                    <li class="glide__slide"><img src="images/google.png"/></li>
+                    <li class="glide__slide"><img src="images/logostarwars.png"></li>
+                    <li class="glide__slide"><img src="images/blob.png"></li>
+                    <li class="glide__slide"><img src="images/img1.JPG"/></li>
+                    <li class="glide__slide"><img src="images/google.png"/></li>
+                    <li class="glide__slide"><img src="images/logostarwars.png"></li>
+                    <li class="glide__slide"><img src="images/blob.png"></li>
 
                 </ul>
             </div>
             <div data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><<<</button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">>>></button>
+                <button class="glide__arrow glide__arrow&#45;&#45;left" data-glide-dir="<"><<<</button>
+                <button class="glide__arrow glide__arrow&#45;&#45;right" data-glide-dir=">">>>></button>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- ----fin-Slider---- -->
 
-    <!-- ----Quams---- -->
-    <section id="quams">
+    <!-- ----Projects---- -->
+    <section id="projects" data-scroll-index="2">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-sm-12">
-                    <h3 data-aos="fade-right"> Quams </h3>
+                    <h3 data-aos="fade-right"> Projects </h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f2.jpg"><img src="images/fleur/f2.jpg"></a>
+                    <a href="snake.html"><img src="images/img1.JPG"></a>
+                </div>
+                <div class="col-lg-4 col-sm-12" id="google">
+                    <a href="Projet_Google/myGoogle.html"><img src="images/google.png"></a>
                 </div>
                 <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f3.jpg"><img src="images/fleur/f3.jpg"></a>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f4.jpg"><img src="images/fleur/f4.jpg"></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f5.jpg"><img src="images/fleur/f5.jpg"></a>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f6.jpg"><img src="images/fleur/f6.jpg"></a>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f7.jpg"><img src="images/fleur/f7.jpg"></a>
+                    <a href="eval_api_star_wars/index.html"><img src="images/logostarwars.png"></a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f8.jpg"><img src="images/fleur/f8.jpg"></a>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f9.jpg"><img src="images/fleur/f9.jpg"></a>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <a data-fancybox="gallery" href="images/fleur/f10.jpg"><img src="images/fleur/f10.jpg"></a>
+                    <a data-fancybox="gallery" href="images/eyeblob.jpg"><img src="images/blob.png"></a>
                 </div>
             </div>
 
         </div>
     </section>
-    <!-- ----fin-Quams---- -->
+    <!-- ----fin-Projects---- -->
 
     <!-- ----Footer---- -->
 
-    <section id="contact">
+    <section data-scroll-index="3" id="contact">
         <div>
             Contact
         </div>
@@ -252,8 +153,6 @@
 
 
 </body>
-<!-- Jquery -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
