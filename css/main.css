@@ -143,18 +143,52 @@ body
 }
 #progressBarFillHtmlCss
 {
+
+}
+.empty
+{
+    display: none;
+    width: 0%;
+}
+.appear
+{
+    animation: appear 2s;
+    opacity: 1;
+}
+#progressBarFillHtmlCss
+{
+
+}
+.fill80
+{
+    animation: fill80 2s;
     width: 80%;
 }
 #progressBarFillJs
 {
+
+}
+.fill70
+{
+    animation: fill70 2s;
     width: 70%;
 }
 #progressBarFillPhp
 {
+
+}
+.fill75
+{
+    animation: fill75 2s;
     width: 75%;
 }
 #progressBarFillSql
 {
+    width: 60%;
+}
+.fill60
+{
+    animation: fill60 2s;
     width: 60%;
 }
 
@@ -327,11 +361,48 @@ body
     }
 }
 
-@keyframes fill80 {
+@keyframes appear  {
     from {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+@keyframes fill80 {
+    0% {
         width: 0%;
     }
-    to {
+    100% {
         width: 80%;
+
+    }
+}
+@keyframes fill70 {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 70%;
+
+    }
+}
+@keyframes fill75 {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 75%;
+
+    }
+}
+@keyframes fill60 {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 60%;
+
     }
 }
